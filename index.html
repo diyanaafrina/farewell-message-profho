@@ -6,15 +6,12 @@
     <title>Farewell Message</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        #message { display: none; margin-top: 20px; font-size: 20px; }
-        button { padding: 10px 20px; font-size: 18px; }
+        #message { margin-top: 20px; font-size: 20px; }
     </style>
 </head>
 <body>
     <h1>🌟 A Farewell Message from Diyana 🌟</h1>
-    <button onclick="revealMessage()">Tap to Reveal</button>
     <div id="message"></div>
-
     <script>
         function revealMessage() {
             const messages = [
@@ -26,8 +23,8 @@
             ];
             const message = messages[Math.floor(Math.random() * messages.length)];
             document.getElementById('message').innerText = message;
-            document.getElementById('message').style.display = 'block';
         }
+        revealMessage();
     </script>
 </body>
 </html>

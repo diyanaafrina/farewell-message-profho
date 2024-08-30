@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farewell Message</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        #message { display: none; margin-top: 20px; font-size: 20px; }
+        button { padding: 10px 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>A Special Farewell Message</h1>
+    <button onclick="revealMessage()">Tap to Reveal</button>
+    <div id="message"></div>
+
+    <script>
+        function revealMessage() {
+            const messages = [
+                "Thank you for your leadership and support. You’ll be missed!",
+                "Wishing you all the best in your next chapter!",
+                "Your guidance has been invaluable. I’ll always remember it.",
+                "It's been a pleasure working with you. Good luck on your next journey!",
+                "Your impact here has been tremendous. Keep in touch!"
+            ];
+            const message = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('message').innerText = message;
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

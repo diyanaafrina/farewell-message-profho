@@ -8,26 +8,39 @@
         body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
         #message { margin-top: 20px; font-size: 20px; }
         button { padding: 10px 20px; font-size: 18px; cursor: pointer; }
+        img { max-width: 100%; height: auto; margin-bottom: 20px; display: none; }
     </style>
 </head>
 <body>
     <h1>🌟 A Farewell Message from Diyana 🌟</h1>
     <button onclick="revealMessage()">Tap to Reveal</button>
     <div id="message"></div>
+    <img id="finalImage" src="https://github.com/diyanaafrina/thank-you-prof/blob/main/123456.jpeg" alt="Datukship Image">
     
     <script>
+        let clickCount = 0;
+
         function revealMessage() {
-            const messages = [
-                "Thank you for your leadership and support. You’ll be missed! 😊",
-                "Wishing you all the best in your next chapter! 🌟",
-                "Your guidance has been invaluable. I’ll always remember it. 🙏",
-                "It's been a pleasure working with you. Good luck on your next journey! 🚀",
-                "Your impact here has been tremendous. Keep in touch! 📞"
-            ];
-            const message = messages[Math.floor(Math.random() * messages.length)];
-            document.getElementById('message').innerText = message;
-            document.getElementById('message').style.display = 'block';
-            document.querySelector('button').innerText = 'Tap Again for Another Message';
+            clickCount++;
+            
+            if (clickCount < 5) {
+                const messages = [
+                    "Thank you for your leadership and support. You’ll be missed! 😊",
+                    "Wishing you all the best in your next chapter! 🌟",
+                    "Your guidance has been invaluable. I’ll always remember it. 🙏",
+                    "It's been a pleasure working with you this past year. 🚀",
+                    "Your impact here has been tremendous. Keep in touch! 📞"
+                ];
+                const message = messages[clickCount - 1];
+                document.getElementById('message').innerText = message;
+                document.getElementById('message').style.display = 'block';
+                document.querySelector('button').innerText = 'Tap Again for Another Message';
+            } else {
+                document.getElementById('message').innerText = "Hope you will get your Datukship soon! 😜🎖️";
+                document.getElementById('message').style.display = 'block';
+                document.getElementById('finalImage').style.display = 'block';
+                document.querySelector('button').style.display = 'none'; // Hide the button after the last message
+            }
         }
     </script>
 </body>
